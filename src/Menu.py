@@ -37,19 +37,34 @@ def handle_mp3_downloader(mp3_downloader):
 
         if mp3_choice == '1':
             url = input("Enter the YouTube URL: ")
-            mp3_downloader.downloadFromUrl(url)
+            try:
+                mp3_downloader.downloadFromUrl(url)
+            except Exception as e:
+                print(f"An error occurred: {e}")
         elif mp3_choice == '2':
             url = input("Enter the Playlist URL: ")
-            mp3_downloader.downloadFromPlaylist(url)
+            try:
+                mp3_downloader.downloadFromPlaylist(url)
+            except Exception as e:
+                print(f"An error occurred: {e}")
         elif mp3_choice == '3':
             query = input("Enter the search query: ")
-            mp3_downloader.downloadFromSearch(query)
+            try:
+                mp3_downloader.downloadFromSearch(query)
+            except Exception as e:
+                print(f"An error occurred: {e}")
         elif mp3_choice == '4':
             file_path = input("Enter the file path (with titles): ")
-            mp3_downloader.downloadFromFileByTitle(file_path)
+            try:
+                mp3_downloader.downloadFromFileByTitle(file_path)
+            except Exception as e:
+                print(f"An error occurred: {e}")
         elif mp3_choice == '5':
             file_path = input("Enter the file path (with URLs): ")
-            mp3_downloader.downloadFromFileByUrl(file_path)
+            try:
+                mp3_downloader.downloadFromFileByUrl(file_path)
+            except Exception as e:
+                print(f"An error occurred: {e}")
         elif mp3_choice == '6':
             break
         else:
@@ -69,19 +84,34 @@ def handle_mp4_downloader(mp4_downloader):
 
         if mp4_choice == '1':
             url = input("Enter the YouTube URL: ")
-            mp4_downloader.downloadFromUrl(url)
+            try:
+                mp4_downloader.downloadFromUrl(url)
+            except Exception as e:
+                print(f"An error occurred: {e}")
         elif mp4_choice == '2':
             url = input("Enter the Playlist URL: ")
-            mp4_downloader.downloadFromPlaylist(url)
+            try:
+                mp4_downloader.downloadFromPlaylist(url)
+            except Exception as e:
+                print(f"An error occurred: {e}")
         elif mp4_choice == '3':
             query = input("Enter the search query: ")
-            mp4_downloader.downloadFromSearch(query)
+            try:
+                mp4_downloader.downloadFromSearch(query)
+            except Exception as e:
+                print(f"An error occurred: {e}")
         elif mp4_choice == '4':
             file_path = input("Enter the file path (with titles): ")
-            mp4_downloader.downloadFromFileByTitle(file_path)
+            try:
+                mp4_downloader.downloadFromFileByTitle(file_path)
+            except Exception as e:
+                print(f"An error occurred: {e}")
         elif mp4_choice == '5':
             file_path = input("Enter the file path (with URLs): ")
-            mp4_downloader.downloadFromFileByUrl(file_path)
+            try:
+                mp4_downloader.downloadFromFileByUrl(file_path)
+            except Exception as e:
+                print(f"An error occurred: {e}")
         elif mp4_choice == '6':
             break
         else:
