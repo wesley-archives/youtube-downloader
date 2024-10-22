@@ -54,26 +54,29 @@ class YoutubeMp3Downloader:
             print(f"Error downloading {info_dict.get('title', 'Unknown Title')}: {e}")
 
 
-    def downloadFromPlaylist(self, url):
-        """Download all audio tracks from a YouTube playlist in mp3 format, one by one."""
+    def downloadFromPlaylist(self, url, start_index=1):
+        """Download all audio tracks from a YouTube playlist in mp3 format, starting from a given index."""
         playlist_opts = self.ydl_opts.copy()
-        playlist_opts['noplaylist'] = False 
+        playlist_opts['noplaylist'] = False
         playlist_opts['extract_flat'] = True
-        
+
         print("Fetching playlist information, please wait...\n")
-        
+
         try:
             with yt_dlp.YoutubeDL(playlist_opts) as ydl:
                 playlist_info = ydl.extract_info(url, download=False)
                 total_videos = len(playlist_info['entries'])
-                
+
                 print(f"{total_videos} videos found in the playlist.")
-                
+
                 if not playlist_info['entries']:
                     print("No videos found in the playlist.")
                     return
-                
+
                 for index, video_info in enumerate(playlist_info['entries'], start=1):
+                    if index < start_index:
+                        continue
+                    
                     video_url = video_info.get('url', video_info.get('webpage_url'))
                     
                     if video_url:
@@ -85,9 +88,10 @@ class YoutubeMp3Downloader:
                             print(f"Error downloading video {index}/{total_videos}: {e}")
                     else:
                         print(f"Skipping video {index}/{total_videos}: Unable to extract URL.")
-                        
+
         except Exception as e:
             print(f"An error occurred while downloading playlist: {e}")
+
 
 
     def downloadFromUrl(self, url):

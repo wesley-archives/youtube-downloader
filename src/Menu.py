@@ -43,8 +43,9 @@ def handle_mp3_downloader(mp3_downloader):
                 print(f"An error occurred: {e}")
         elif mp3_choice == '2':
             url = input("Enter the Playlist URL: ")
+            start = int(input("Enter the start (default = 1): ") or 1)
             try:
-                mp3_downloader.downloadFromPlaylist(url)
+                mp3_downloader.downloadFromPlaylist(url, start)
             except Exception as e:
                 print(f"An error occurred: {e}")
         elif mp3_choice == '3':
