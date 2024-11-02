@@ -23,7 +23,11 @@ class YoutubeMp3Downloader:
     def _get_channel_name(self, info_dict):
         """Extracts and sanitizes the channel name from the video metadata."""
         channel = info_dict.get('uploader', 'UnknownChannel')
-        return ''.join(c if c.isalnum() or c in (' ', '_') else '_' for c in channel)
+
+        if "Topic" in channel:
+            channel = channel.replace("Topic", "")
+
+        return channel.replace("  ", " ").strip(" ")
 
     def _download_with_channel_subdir(self, url, index=None, total=None):
         """Fetch metadata, create directory for the channel, and download the audio."""        
