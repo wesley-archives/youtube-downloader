@@ -1,6 +1,8 @@
 # YouTube Downloader (Personal Use)
 
-This is a simple YouTube downloader project for personal use. It allows you to download YouTube videos as MP3 or MP4 files via a command-line interface. The downloader offers options to fetch videos from URLs, playlists, or search queries, as well as downloading from lists stored in text files.
+This is a YouTube downloader project intended strictly for personal use. It allows you to download YouTube videos as MP3 (audio) or MP4 (video) files through a command-line interface. This tool supports downloading from single URLs, playlists, search queries, or from lists of URLs saved in text files.
+
+> ⚠️ Note: This tool is intended only for downloading non-copyrighted content or videos with explicit permission for free use. Always respect [YouTube's Terms of Service](https://www.youtube.com/t/terms) and copyright laws. Unauthorized downloading of copyrighted material is strictly prohibited.
 
 ## Features
 
@@ -57,6 +59,6 @@ python main.py
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
 
-## Acknowledgements
+## Acknowledgements and Disclaimer
 
-This project is for educational purposes only. Please respect the YouTube terms of service and do not use this project for commercial purposes.
+This project is intended for personal use only. Please respect YouTube’s Terms of Service and copyright laws. Only download videos that are either non-copyrighted or have been released under a free-use license. Unauthorized downloading of copyrighted content may lead to legal consequences. Use this tool responsibly.
