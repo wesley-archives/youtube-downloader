@@ -7,4 +7,4 @@ pycryptodomex==3.21.0
 requests==2.32.3
 urllib3==2.2.3
 websockets==13.1
-yt-dlp==2024.10.22
+yt-dlp==2026.2.21
